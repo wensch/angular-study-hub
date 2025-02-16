@@ -1,5 +1,6 @@
-import { StateService } from './../../services/state.service';
+import { Product, ProductService } from 'src/app/services/product.service';
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,15 +9,9 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
-  counter$ = this.stateService.counter$
+  products$: Observable<Product[]>
 
-  constructor(private stateService: StateService) { }
-
-  increment() {
-    this.stateService.increment()
-  }
-
-  decrement() {
-    this.stateService.decrement()
+  constructor(private productService: ProductService) {
+    this.products$ = this.productService.getProducts()
   }
 }

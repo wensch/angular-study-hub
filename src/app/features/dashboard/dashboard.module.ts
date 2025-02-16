@@ -3,13 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
-import { ChildComponent } from 'src/app/components/child/child.component';
 
 
 @NgModule({
   declarations: [
-    DashboardComponent,
-    ChildComponent
+    DashboardComponent
   ],
   imports: [
     CommonModule,

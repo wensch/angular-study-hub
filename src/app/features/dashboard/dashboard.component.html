@@ -1,11 +1,12 @@
 <div class="dashboard-container">
-  <h1>📌 Gerenciamento de Estado com RxJS</h1>
+  <h1>🛒 Lista de Produtos</h1>
 
-  <h2>Contador Global: <strong>{{ counter$ | async }}</strong></h2>
-
-  <button (click)="decrement()">-</button>
-  <button (click)="increment()">+</button>
-  <hr>
-
-  <app-child [count]="counter$ | async"></app-child>
+  <div class="products-list">
+    <div *ngFor="let product of products$ | async" class="product-card">
+      <img [src]="product.image" [alt]="product.name">
+      <h3>{{ product.name }}</h3>
+      <p>💰 Preço: R$ {{ product.price }}</p>
+      <!-- <button (click)="addToCart(product)">Adicionar ao Carrinho</button> -->
+    </div>
+  </div>
 </div>
