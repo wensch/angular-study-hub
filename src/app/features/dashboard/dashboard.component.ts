@@ -1,5 +1,5 @@
+import { StateService } from './../../services/state.service';
 import { Component } from '@angular/core';
-import { DataService } from './../../services/data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,12 +7,16 @@ import { DataService } from './../../services/data.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  data$ = this.dataService.data$;
 
-  constructor(private dataService: DataService) {}
+  counter$ = this.stateService.counter$
 
-  updateValue() {
-    const newValue = Math.floor(Math.random() * 100);
-    this.dataService.upateData(newValue);
+  constructor(private stateService: StateService) { }
+
+  increment() {
+    this.stateService.increment()
+  }
+
+  decrement() {
+    this.stateService.decrement()
   }
 }

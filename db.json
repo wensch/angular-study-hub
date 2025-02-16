@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Notebook Gamer",
+      "price": 4500,
+      "image": "https://via.placeholder.com/150?text=Notebook+Gamer"
+    },
+    {
+      "id": 2,
+      "name": "Mouse Sem Fio",
+      "price": 250,
+      "image": "https://via.placeholder.com/150?text=Mouse+Sem+Fio"
+    },
+    {
+      "id": 3,
+      "name": "Teclado Mecânico",
+      "price": 600,
+      "image": "https://via.placeholder.com/150?text=Teclado+Mec%C3%A2nico"
+    },
+    {
+      "id": 4,
+      "name": "Monitor 24 Polegadas",
+      "price": 1200,
+      "image": "https://via.placeholder.com/150?text=Monitor+24+Polegadas"
+    },
+    {
+      "id": 5,
+      "name": "Headset Gamer",
+      "price": 350,
+      "image": "https://via.placeholder.com/150?text=Headset+Gamer"
+    },
+    {
+      "id": 6,
+      "name": "Cadeira Ergonômica",
+      "price": 980,
+      "image": "https://via.placeholder.com/150?text=Cadeira+Ergon%C3%B4mica"
+    }
+  ]
+}

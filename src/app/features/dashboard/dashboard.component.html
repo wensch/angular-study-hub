@@ -1,7 +1,11 @@
 <div class="dashboard-container">
-  <h1>📌 Estudo Angular com RxJS</h1>
+  <h1>📌 Gerenciamento de Estado com RxJS</h1>
 
-  <h2>Valor Atual: <strong>{{ data$ | async }}</strong></h2>
+  <h2>Contador Global: <strong>{{ counter$ | async }}</strong></h2>
 
-  <button (click)="updateValue()">Gerar Novo Valor</button>
+  <button (click)="decrement()">-</button>
+  <button (click)="increment()">+</button>
+  <hr>
+
+  <app-child [count]="counter$ | async"></app-child>
 </div>

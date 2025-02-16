@@ -3,16 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './features/dashboard/dashboard.component';
+import { ChildComponent } from './components/child/child.component';
+import { UserModule } from './features/user/user.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    ChildComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

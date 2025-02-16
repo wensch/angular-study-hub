@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent }, // Página inicial
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: 'dashboard', loadChildren: () => import('./features/dashboard/dashboard.module').then(m => m.DashboardModule) },
+  { path: 'user', loadChildren: () => import('./features/user/user.module').then(m => m.UserModule) }
 ];
 
 @NgModule({
