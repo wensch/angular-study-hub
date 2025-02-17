@@ -1,6 +1,7 @@
 import { Product, ProductService } from 'src/app/services/product.service';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,12 @@ export class DashboardComponent {
 
   products$: Observable<Product[]>
 
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService, private cartService: CartService) {
     this.products$ = this.productService.getProducts()
+  }
+
+
+  addToCart(product: Product) {
+    this.cartService.addToCart(product)
   }
 }
