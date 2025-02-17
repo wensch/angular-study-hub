@@ -1,7 +1,12 @@
 <div class="dashboard-container">
   <h1>🛒 Loja de Produtos</h1>
 
-  <p><strong>Itens no carrinho:</strong> {{ cartCount().length }}</p>
+  <div class="cart-button">
+    <button (click)="goToCart()">
+      🛒 Ir para o Carrinho <span *ngIf="cartCount()> 0">({{ cartCount() }})</span>
+    </button>
+  </div>
+
 
   <div class="products-list">
     <div *ngFor="let product of products$ | async" class="product-card">

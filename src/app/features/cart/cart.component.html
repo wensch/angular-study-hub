@@ -1,0 +1,28 @@
+<div class="cart-container">
+  <h1>🛒 Meu Carrinho</h1>
+
+  <p *ngIf="cart().length === 0">O carrinho está vazio.</p>
+
+  <div *ngFor="let product of cart(); let i = index" class="cart-item fade-in">
+    <img [src]="product.image" [alt]="product.name">
+    <div class="cart-info">
+      <h3>{{ product.name }}</h3>
+      <p>💰 Preço: R$ {{ product.price }}</p>
+      <button (click)="removeFromCart(product.id)">Remover</button>
+    </div>
+  </div>
+
+  <div class="checkout-section">
+    <h3 *ngIf="cart().length > 0">Total: R$ {{ total() }}</h3>
+
+    <button *ngIf="cart().length > 0 && !orderSuccess" (click)="placeOrder()" [disabled]="isProcessing" class="checkout-btn">
+      {{ isProcessing ? 'Processando...' : 'Finalizar Compra' }}
+    </button>
+
+    <button *ngIf="cart().length > 0 && !orderSuccess" (click)="clearCart()" class="clear-btn">
+      Esvaziar Carrinho
+    </button>
+
+    <p *ngIf="orderSuccess" class="success-message">🎉 Compra finalizada com sucesso!</p>
+  </div>
+</div>

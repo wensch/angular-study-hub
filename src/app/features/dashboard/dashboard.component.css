@@ -40,3 +40,22 @@ button {
 button:hover {
   background: #218838;
 }
+
+.cart-button {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #0056b3;
+}
